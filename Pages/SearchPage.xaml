@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recraft.Pages.SearchPage"
+             Title="Search Ideas"
+             BackgroundColor="White">
+
+
+    <VerticalStackLayout>
+
+        <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20" >
+            <Image Source="logo.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Label Text="RECRAFT IDEAS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Gray">
+            </Label>
+        </Grid>
+        
+        <SearchBar x:Name="IdeaSearchBar" 
+                   Placeholder="Search ideas..." 
+                   SearchButtonPressed="OnSearchButtonPressed"
+                   Margin="20" 
+                   TextColor="Black"/>
+
+        <CollectionView x:Name="SearchResultsView" SelectionMode="Single" SelectionChanged="OnSelectionChanged" Margin="20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" Padding="10" Margin="5" BackgroundColor="Gray">
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18" />
+                            <Label Text="{Binding ItemType}" FontAttributes="Italic" FontSize="14" TextColor="Black" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <ContentView x:Name="DetailContainer" Padding="10">
+            <VerticalStackLayout>
+                <Label x:Name="TitleLabel" Padding="10" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" TextColor="DarkGreen" />
+                <Image x:Name="IdeaImage" HeightRequest="200" Aspect="AspectFit" />
+                <Label x:Name="ItemTypeLabel" HorizontalOptions="Center" FontAttributes="Italic" TextColor="Gray" />
+                <Label x:Name="DescriptionLabel" HorizontalOptions="Center" FontSize="16" TextColor="Black" />
+            </VerticalStackLayout>
+        </ContentView>
+    </VerticalStackLayout>
+</ContentPage>
