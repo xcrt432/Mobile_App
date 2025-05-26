@@ -4,25 +4,47 @@
              x:Class="Recraft.Pages.QuizPage"
              Title="Eco Quiz"
              BackgroundColor="White">
-    
+
     <VerticalStackLayout>
-        
-        <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20" >
+
+        <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20">
             <Image Source="logo.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-            <Label Text="RECRAFT IDEAS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Gray">
-            </Label>
+            <Label Text="RECRAFT IDEAS"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   TextColor="Gray"/>
         </Grid>
 
-        <Label x:Name="QuestionLabel" 
-               Text="Question 1 of 5" 
-               FontSize="24" 
-               FontAttributes="Bold" 
+        <Label x:Name="QuestionNumberLabel"
+               Text="Question 1 of 5"
+               FontSize="20"
                TextColor="DarkGreen"
+               HorizontalOptions="Center"/>
+
+        <Label x:Name="QuestionLabel"
+               Text=""
+               FontSize="22"
+               FontAttributes="Bold"
                HorizontalOptions="Center"
-               Margin="30"/>
-        
-        <Button Text="Next" Clicked="OnNextClicked" 
-                WidthRequest="180"/>
-        
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               Margin="10"/>
+
+        <RadioButton TextColor="Black" x:Name="OptionA" GroupName="Options"/>
+        <RadioButton TextColor="Black" x:Name="OptionB" GroupName="Options"/>
+        <RadioButton TextColor="Black" x:Name="OptionC" GroupName="Options"/>
+        <RadioButton TextColor="Black" x:Name="OptionD" GroupName="Options"/>
+
+        <Button x:Name="NextButton"
+                Text="Next"
+                Clicked="OnNextClicked"
+                BackgroundColor="LightGreen"
+                TextColor="White"
+                FontAttributes="Bold"
+                WidthRequest="180"
+                HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
+
